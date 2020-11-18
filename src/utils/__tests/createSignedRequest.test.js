@@ -1,6 +1,6 @@
-import createSignedRequest from '../createSignedRequest'
-import boomerang from '@cwi/boomerang'
-import bsv from 'bsv'
+const createSignedRequest = require('../createSignedRequest')
+const boomerang = require('@cwi/boomerang')
+const bsv = require('bsv')
 
 jest.mock('@cwi/boomerang')
 

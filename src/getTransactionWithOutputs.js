@@ -2,7 +2,7 @@ import createSignedRequest from './utils/createSignedRequest'
 import bsv from 'bsv'
 import rpuzzle from 'rpuzzle'
 
-export default async ({
+module.exports = async ({
   xprivKey,
   config,
   outputs,

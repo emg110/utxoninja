@@ -1,7 +1,7 @@
-import createSignedRequest from './utils/createSignedRequest'
-import { CONFIG } from './defaults'
+const createSignedRequest = require('./utils/createSignedRequest')
+const { CONFIG } = require('./defaults')
 
-export default async ({ xprivKey, config = CONFIG, paymail }) => {
+module.exports = async ({ xprivKey, config = CONFIG, paymail }) => {
   const result = await createSignedRequest({
     xprivKey,
     config,

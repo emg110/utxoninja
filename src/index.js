@@ -1,10 +1,12 @@
-export { default as getPaymail } from './getPaymail'
-export { default as setPaymail } from './setPaymail'
-export { default as getSettings } from './getSettings'
-export { default as setSettings } from './setSettings'
-export { default as getAvatar } from './getAvatar'
-export { default as setAvatar } from './setAvatar'
-export { default as getTransactions } from './getTransactions'
-export { default as getTotalValue } from './getTotalValue'
-export { default as getTransactionWithOutputs } from './getTransactionWithOutputs'
-export { default as processOutgoingTransaction } from './processOutgoingTransaction'
+module.exports = {
+  getPaymail: require('./getPaymail'),
+  setPaymail: require('./setPaymail'),
+  getSettings: require('./getSettings'),
+  setSettings: require('./setSettings'),
+  getAvatar: require('./getAvatar'),
+  setAvatar: require('./setAvatar'),
+  getTransactions: require('./getTransactions'),
+  getTotalValue: require('./getTotalValue'),
+  getTransactionWithOutputs: require('./getTransactionWithOutputs'),
+  processOutgoingTransaction: require('./processOutgoingTransaction')
+}

@@ -1,7 +1,7 @@
-import boomerang from '@cwi/boomerang'
-import bsv from 'bsv'
+const boomerang = require('@cwi/boomerang')
+const bsv = require('bsv')
 
-export default async ({ xprivKey, config, path, body }) => {
+module.exports = async ({ xprivKey, config, path, body }) => {
   const hdPriv = bsv.HDPrivateKey.fromString(xprivKey)
   const privKey = hdPriv.privateKey
   const xpub = hdPriv.hdPublicKey.toString()

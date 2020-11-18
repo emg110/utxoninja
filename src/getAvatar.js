@@ -1,10 +1,10 @@
-import { PaymailClient } from '@moneybutton/paymail-client'
-import dns from 'dns'
-import fetch from 'isomorphic-fetch'
-import getPaymail from './getPaymail'
-import { CONFIG } from './defaults'
+const { PaymailClient } = require('@moneybutton/paymail-client')
+const dns = require('dns')
+const fetch = require('isomorphic-fetch')
+const getPaymail = require('./getPaymail')
+const { CONFIG } = require('./defaults')
 
-export default async ({ xprivKey, config = CONFIG }) => {
+module.exports = async ({ xprivKey, config = CONFIG }) => {
   const client = new PaymailClient(dns, fetch)
   return client.getPublicProfile(
     await getPaymail({ xprivKey, config })
