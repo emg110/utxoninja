@@ -29,6 +29,7 @@
     "@moneybutton/paymail-client": "^0.38.4",
     "bsv": "^1.5.4",
     "dns": "^0.2.2",
-    "isomorphic-fetch": "^3.0.0"
+    "isomorphic-fetch": "^3.0.0",
+    "rpuzzle": "0.0.4"
   }
 }

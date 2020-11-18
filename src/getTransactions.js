@@ -1,7 +1,13 @@
 import createSignedRequest from './utils/createSignedRequest'
+import { CONFIG } from './defaults'
 
 export default ({
-  xprivKey, config, involving, limit = 25, offset = 0, orderBy = 'newest-first'
+  xprivKey,
+  config = CONFIG,
+  involving,
+  limit = 25,
+  offset = 0,
+  orderBy = 'newest-first'
 }) => {
   return createSignedRequest({
     xprivKey,
