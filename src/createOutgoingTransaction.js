@@ -4,16 +4,15 @@ const { CONFIG } = require('./defaults')
 module.exports = async ({
   xprivKey,
   config = CONFIG,
-  submittedTransaction,
-  note,
-  recipient,
-  reference
+  foreignInputs,
+  requiredOutputs,
+  feePerKb
 } = {}) => {
   const result = await createSignedRequest({
     xprivKey,
     config,
-    path: '/processOutgoingTransaction',
-    body: { hex: submittedTransaction, reference, note, recipient }
+    path: '/createOutgoingTransaction',
+    body: { foreignInputs, requiredOutputs, feePerKb }
   })
   return result
 }

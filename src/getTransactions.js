@@ -8,7 +8,7 @@ module.exports = ({
   limit = 25,
   offset = 0,
   orderBy = 'newest-first'
-}) => {
+} = {}) => {
   return createSignedRequest({
     xprivKey,
     config,

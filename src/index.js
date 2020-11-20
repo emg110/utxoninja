@@ -8,5 +8,6 @@ module.exports = {
   getTransactions: require('./getTransactions'),
   getTotalValue: require('./getTotalValue'),
   getTransactionWithOutputs: require('./getTransactionWithOutputs'),
+  createOutgoingTransaction: require('./createOutgoingTransaction'),
   processOutgoingTransaction: require('./processOutgoingTransaction')
 }

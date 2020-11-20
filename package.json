@@ -8,9 +8,7 @@
   "license": "PROPRIETARY",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch",
-    "build": "rollup -c --environment BUILD:production",
-    "prepublishOnly": "npm run build"
+    "test:watch": "jest --watch"
   },
   "publishConfig": {
     "registry": "https://npm-registry.babbage.systems/"

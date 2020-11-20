@@ -1,6 +1,6 @@
-import createSignedRequest from './utils/createSignedRequest'
-import bsv from 'bsv'
-import rpuzzle from 'rpuzzle'
+const createSignedRequest = require('./utils/createSignedRequest')
+const bsv = require('bsv')
+const rpuzzle = require('rpuzzle')
 
 module.exports = async ({
   xprivKey,

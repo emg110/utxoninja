@@ -1,5 +1,5 @@
 module.exports = {
-  CONFIG = {
-    dojoServerURL: 'https://dojo.babbage.systems/.netlify/functions/dojo-serverless'
+  CONFIG: {
+    dojoURL: 'https://dojo.babbage.systems/.netlify/functions/dojo-serverless'
   }
 }

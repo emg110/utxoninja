@@ -12,7 +12,6 @@ module.exports = async ({ xprivKey, config, path, body }) => {
     url: `${config.dojoURL}${path}`,
     xpub
   })
-  console.log(messageToSign)
   const signature = bsv.crypto.ECDSA.sign(
     bsv.crypto.Hash.sha256(Buffer.from(messageToSign)),
     privKey
