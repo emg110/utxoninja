@@ -5,7 +5,7 @@ module.exports = ({ xprivKey, config = CONFIG } = {}) => {
   return createSignedRequest({
     xprivKey,
     config,
-    path: '/getTotalOfUnspentOutputs',
+    feature: 'getTotalOfUnspentOutputs',
     body: {}
   })
 }

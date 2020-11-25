@@ -12,7 +12,7 @@ module.exports = ({
   return createSignedRequest({
     xprivKey,
     config,
-    path: '/getTransactions',
+    feature: 'getTransactions',
     body: { limit, offset, involving, orderBy }
   })
 }

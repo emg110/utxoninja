@@ -7,7 +7,7 @@ module.exports = async ({ xprivKey, config = CONFIG, name, photoURL } = {}) => {
   return createSignedRequest({
     xprivKey,
     config,
-    path: '/setNameAndPhotoURL',
+    feature: 'setNameAndPhotoURL',
     body: { name, photoURL, paymail }
   })
 }

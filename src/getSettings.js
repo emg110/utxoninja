@@ -5,7 +5,7 @@ module.exports = async ({ xprivKey, config = CONFIG } = {}) => {
   const result = await createSignedRequest({
     xprivKey,
     config,
-    path: '/getCurrentReceivePolicy',
+    feature: 'getCurrentReceivePolicy',
     body: {}
   })
   return result

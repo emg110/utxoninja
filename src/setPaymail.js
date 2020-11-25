@@ -5,7 +5,7 @@ module.exports = async ({ xprivKey, config = CONFIG, paymail } = {}) => {
   const result = await createSignedRequest({
     xprivKey,
     config,
-    path: '/changePaymail',
+    feature: 'changePaymail',
     body: { paymail }
   })
   return result

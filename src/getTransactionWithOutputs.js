@@ -32,7 +32,7 @@ module.exports = async ({
   } = await createSignedRequest({
     xprivKey,
     config,
-    path: '/createOutgoingTransaction',
+    feature: 'createOutgoingTransaction',
     body: {
       requiredOutputs,
       feePerKb,

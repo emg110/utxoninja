@@ -34,6 +34,8 @@ dojoServerURL | The URL of the Dojo to use
 
 Adequate testing practices for use in a critical production application should be observed at all times for this library.
 
+While this is not a React application, the react-scripts package is used for testing. I tried to get Jest to work on its own with the Web Cryptography API, TextEncoder and TextDecoder, but was unable to find a suitable configuration. If anyone can get the tests to pass with only Jest, please feel free to create a pull request.
+
 ## Confidentiality
 
 This is proprietary software developed and owned by Peer-to-peer Privacy Systems Research, LLC. 

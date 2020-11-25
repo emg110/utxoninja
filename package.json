@@ -14,15 +14,15 @@
     "registry": "https://npm-registry.babbage.systems/"
   },
   "devDependencies": {
+    "fetch-mock": "^9.11.0",
     "jest": "^26.6.3",
     "standard": "^15.0.1"
   },
   "dependencies": {
     "@cwi/boomerang": "^0.1.0",
+    "@cwi/errors": "^0.1.0",
     "@moneybutton/paymail-client": "^0.38.4",
     "bsv": "^1.5.4",
-    "dns": "^0.2.2",
-    "isomorphic-fetch": "^3.0.0",
     "rpuzzle": "0.0.4"
   }
 }

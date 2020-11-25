@@ -11,7 +11,7 @@ module.exports = async ({
   const result = await createSignedRequest({
     xprivKey,
     config,
-    path: '/createOutgoingTransaction',
+    feature: 'createOutgoingTransaction',
     body: { foreignInputs, requiredOutputs, feePerKb }
   })
   return result

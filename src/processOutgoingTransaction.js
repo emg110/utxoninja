@@ -12,7 +12,7 @@ module.exports = async ({
   const result = await createSignedRequest({
     xprivKey,
     config,
-    path: '/processOutgoingTransaction',
+    feature: 'processOutgoingTransaction',
     body: { hex: submittedTransaction, reference, note, recipient }
   })
   return result
