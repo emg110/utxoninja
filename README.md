@@ -36,8 +36,6 @@ Adequate testing practices for use in a critical production application should b
 
 While this is not a React application, the react-scripts package is used for testing. I tried to get Jest to work on its own with the Web Cryptography API, TextEncoder and TextDecoder, but was unable to find a suitable configuration. If anyone can get the tests to pass with only Jest, please feel free to create a pull request.
 
-## Confidentiality
+## License
 
-This is proprietary software developed and owned by Peer-to-peer Privacy Systems Research, LLC. 
-Except as provided for in your CWI Partner Agreement with us, you may not use this software and 
-must keep it confidential.
+The license for this library, which is a wrapper for the proprietary Dojo API, is the Open BSV License. It can only be used on the BSV blockchain. The Dojo API itself, including the rights to create and host Dojo servers or any other related infrastructure, is not covered by the Open BSV License and remains proprietary and restricted. The Open BSV License only extends to the code in this repository, and you are not permitted to host Dojo servers or create copies or alternative implementations of the proprietary Dojo API without other permission.
