@@ -1,5 +1,5 @@
 {
-  "name": "@cwi/utxoninja",
+  "name": "utxoninja",
   "version": "0.1.1",
   "description": "Management for P2PKH and P2RPH UTXOs",
   "main": "src/index.js",
@@ -9,9 +9,6 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch"
-  },
-  "publishConfig": {
-    "registry": "https://npm-registry.babbage.systems/"
   },
   "devDependencies": {
     "fetch-mock": "^9.11.0",
