@@ -6,13 +6,14 @@ module.exports = async ({
   config = CONFIG,
   foreignInputs,
   requiredOutputs,
+  rPuzzleNeeded,
   feePerKb
 } = {}) => {
   const result = await createSignedRequest({
     xprivKey,
     config,
     feature: 'createOutgoingTransaction',
-    body: { foreignInputs, requiredOutputs, feePerKb }
+    body: { foreignInputs, requiredOutputs, rPuzzleNeeded, feePerKb }
   })
   return result
 }
