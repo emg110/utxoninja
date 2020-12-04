@@ -205,6 +205,31 @@ Returns the total of all unspent outputs managed by the Dojo.
 
 The return value is a Promise for an object containing the number of satoshis.
 
+## Errors
+
+When errors are returned from the Dojo API, they take the form of an object with three fields:
+
+- **status**: Always `error`
+- **code**: The machine-readable error code. Example: `ERR_MALFORMED_REQUEST`
+- **description**: The human-readable error message.
+
+The UTXONinja wrapper will raise JavaScript errors in the following format:
+
+> ERR_BAD_THING: A bad thing has happened.
+
+You can parse these error messages into a usable format as follows:
+
+```js
+try {
+  await ninja.someFunction()
+} catch (e) {
+  console.log(`Error code: ${e.message.split(':')[0]}`)
+  console.log(`Error message: ${e.message.split(':')[1].trim()}`)
+}
+```
+
+If you want custom error messages, or if you are building an internationalized (non-English) application, you can utilize the machine-readable error codes. A list of current codes can be found in the Table of Errors in the [Dojo API Documentation](https://dojo.babbage.systems).
+
 ## Testing
 
 Adequate testing practices for use in a critical production application should be observed at all times for this library.

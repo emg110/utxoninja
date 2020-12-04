@@ -24,7 +24,7 @@ module.exports = async ({ xprivKey, config, feature, body }) => {
     bsv.crypto.Hash.sha256(Buffer.from(messageToSign)),
     privKey
   ).toString()
-  return boomerang(
+  const result = await boomerang(
     'POST',
     serverConfig.capabilities.dojo[feature],
     {
@@ -32,4 +32,10 @@ module.exports = async ({ xprivKey, config, feature, body }) => {
       auth: { dt, xpub, signature }
     }
   )
+  if (typeof result === 'object' && result.status === 'error') {
+    throw new Error(
+      `${result.code}: ${result.description}`
+    )
+  }
+  return result
 }

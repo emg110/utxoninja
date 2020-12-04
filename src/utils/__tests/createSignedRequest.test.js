@@ -100,4 +100,23 @@ describe('createSignedRequest', () => {
       feature: 'featureOne'
     })).toEqual('MOCK_RV')
   })
+  it('Throws errors from the API', async () => {
+    boomerang.mockReturnValue({
+      status: 'error',
+      code: 'ERR_BAD_THING',
+      description: 'A bad thing happened'
+    })
+    expect(createSignedRequest({
+      xprivKey: 'xprv9s21ZrQH143K2zGP3VU54dJPkLEZCtnbk7F7aPDdnCAgsLT7PtZJZKxZ5joWFoTVeL65Uge48CinBnw7da17xLGFUxWKkTYWtyG42ceXaQH',
+      config: {
+        dojoURL: 'https://bar.com'
+      },
+      body: {
+        foo: 'bar'
+      },
+      feature: 'featureOne'
+    })).rejects.toThrow(new Error(
+      'ERR_BAD_THING: A bad thing happened'
+    ))
+  })
 })
