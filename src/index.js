@@ -9,5 +9,7 @@ module.exports = {
   getTotalValue: require('./getTotalValue'),
   getTransactionWithOutputs: require('./getTransactionWithOutputs'),
   createOutgoingTransaction: require('./createOutgoingTransaction'),
-  processOutgoingTransaction: require('./processOutgoingTransaction')
+  processOutgoingTransaction: require('./processOutgoingTransaction'),
+  markMissingTxInputsAsSpent: require('./markMissingTxInputsAsSpent'),
+  getTransactionOutputs: require('./getTransactionOutputs')
 }

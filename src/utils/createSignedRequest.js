@@ -33,9 +33,14 @@ module.exports = async ({ xprivKey, config, feature, body }) => {
     }
   )
   if (typeof result === 'object' && result.status === 'error') {
-    throw new Error(
+    const e = new Error(
       `${result.code}: ${result.description}`
     )
+    Object
+      .keys(result)
+      .filter(x => x !== 'status' && x !== 'description')
+      .forEach(x => { e[x] = result[x] })
+    throw e
   }
   return result
 }
