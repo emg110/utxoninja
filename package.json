@@ -1,6 +1,6 @@
 {
   "name": "utxoninja",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Management for P2PKH and P2RPH UTXOs",
   "main": "src/index.js",
   "repository": "git+https://github.com/p2ppsr/utxoninja",

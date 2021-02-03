@@ -11,5 +11,7 @@ module.exports = {
   createOutgoingTransaction: require('./createOutgoingTransaction'),
   processOutgoingTransaction: require('./processOutgoingTransaction'),
   markMissingTxInputsAsSpent: require('./markMissingTxInputsAsSpent'),
-  getTransactionOutputs: require('./getTransactionOutputs')
+  getTransactionOutputs: require('./getTransactionOutputs'),
+  updateTransactionStatus: require('./updateTransactionStatus'),
+  updateOutpointStatus: require('./updateOutpointStatus')
 }
