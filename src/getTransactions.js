@@ -7,12 +7,13 @@ module.exports = ({
   involving,
   limit = 25,
   offset = 0,
-  orderBy = 'newest-first'
+  orderBy = 'newest-first',
+  labels
 } = {}) => {
   return createSignedRequest({
     xprivKey,
     config,
     feature: 'getTransactions',
-    body: { limit, offset, involving, orderBy }
+    body: { limit, offset, involving, orderBy, labels }
   })
 }

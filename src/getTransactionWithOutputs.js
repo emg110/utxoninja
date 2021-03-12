@@ -8,7 +8,8 @@ module.exports = async ({
   config = CONFIG,
   outputs,
   rPuzzleInputSigningWIF,
-  feePerKb = 500
+  feePerKb = 500,
+  labels
 } = {}) => {
   const hdKey = bsv.HDPrivateKey.fromString(xprivKey)
   const tx = new bsv.Transaction()
@@ -36,7 +37,8 @@ module.exports = async ({
     body: {
       requiredOutputs,
       feePerKb,
-      rPuzzleNeeded: typeof rPuzzleInputSigningWIF !== 'undefined'
+      rPuzzleNeeded: typeof rPuzzleInputSigningWIF !== 'undefined',
+      labels
     }
   })
 
