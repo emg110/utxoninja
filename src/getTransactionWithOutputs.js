@@ -26,11 +26,7 @@ module.exports = async ({
     scriptLength: o.script.length / 2
   }))
 
-  const {
-    selectedInputs,
-    changeOutputs,
-    reference
-  } = await createSignedRequest({
+  const createResult = await createSignedRequest({
     xprivKey,
     config,
     feature: 'createOutgoingTransaction',
@@ -41,6 +37,16 @@ module.exports = async ({
       labels
     }
   })
+
+  if (createResult.status !== 'success') {
+    return createResult
+  }
+
+  const {
+    selectedInputs,
+    changeOutputs,
+    reference
+  } = createResult
 
   // Add the change outputs
   changeOutputs.forEach(output => {
