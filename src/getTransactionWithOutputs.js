@@ -38,7 +38,7 @@ module.exports = async ({
     }
   })
 
-  if (createResult.status !== 'success') {
+  if (createResult.status === 'error') {
     return createResult
   }
 
