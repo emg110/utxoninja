@@ -1,4 +1,3 @@
-const { ValidationError } = require('@cwi/errors')
 const fetchMock = require('fetch-mock')
 
 let getDojoConfig
@@ -43,7 +42,7 @@ describe('getDojoConfig', () => {
       'The Dojo URL must be a string, but object was given!'
     ))
   })
-  it('Throws a ValidationError if dojoURL is not a valid URL', async () => {
+  it('Throws a Error if dojoURL is not a valid URL', async () => {
     await expect(
       getDojoConfig('A potato flew around my room')
     ).rejects.toThrow(new TypeError(
@@ -78,13 +77,13 @@ describe('getDojoConfig', () => {
     expect(cfg1).toEqual(cfg2)
     expect(cfg1).toEqual(VALID_CONFIG_2)
   })
-  it('Throws a ValidationError if the Dojo cannot be contacted', async () => {
+  it('Throws a Error if the Dojo cannot be contacted', async () => {
     fetchMock.getOnce(`${VALID_URL}/.well-known/bsvalias`, {
       body: {}
     })
     await expect(getDojoConfig(
       VALID_URL
-    )).rejects.toThrow(new ValidationError(
+    )).rejects.toThrow(new Error(
       `The server at ${VALID_URL} does not appear to be a Dojo!`
     ))
   })
@@ -98,25 +97,25 @@ describe('getDojoConfig', () => {
     const actualValue = await getDojoConfig(VALID_URL)
     expect(actualValue).toEqual(VALID_CONFIG)
   })
-  it('Throws a ValidationError if the URL is not for a Dojo', async () => {
+  it('Throws a Error if the URL is not for a Dojo', async () => {
     fetchMock.getOnce(
       `${VALID_URL}/.well-known/bsvalias`,
       {
         body: INVALID_CONFIG
       }
     )
-    await expect(getDojoConfig(VALID_URL)).rejects.toThrow(new ValidationError(
+    await expect(getDojoConfig(VALID_URL)).rejects.toThrow(new Error(
       `The server at ${VALID_URL} does not appear to be a Dojo!`
     ))
   })
-  it('Throws a ValidationError if the dojoURL in the config object does not match the one requested', async () => {
+  it('Throws a Error if the dojoURL in the config object does not match the one requested', async () => {
     fetchMock.getOnce(
       `${VALID_URL}/.well-known/bsvalias`,
       {
         body: VALID_CONFIG_2
       }
     )
-    await expect(getDojoConfig(VALID_URL)).rejects.toThrow(new ValidationError(
+    await expect(getDojoConfig(VALID_URL)).rejects.toThrow(new Error(
       `The server at ${VALID_URL} is not configured properly! Its dojoURL from the well-known endpoint (${VALID_URL_2}) does not match ${VALID_URL}`
     ))
   })

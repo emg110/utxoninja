@@ -1,5 +1,4 @@
-const boomerang = require('@cwi/boomerang')
-const { ValidationError } = require('@cwi/errors')
+const boomerang = require('boomerang-http')
 const validURL = require('./validURL')
 
 let config = null
@@ -17,7 +16,7 @@ module.exports = async dojoURL => {
       )
     }
     if (!validURL(dojoURL)) {
-      throw new ValidationError(
+      throw new Error(
         `The provided Dojo URL (${dojoURL}) is not a valid URL!`
       )
     }
@@ -32,14 +31,14 @@ module.exports = async dojoURL => {
       newConfig.capabilities.dojo.version === '0.1.0'
     ) {
       if (newConfig.capabilities.dojo.dojoURL !== dojoURL) {
-        throw new ValidationError(
+        throw new Error(
           `The server at ${dojoURL} is not configured properly! Its dojoURL from the well-known endpoint (${newConfig.capabilities.dojo.dojoURL}) does not match ${dojoURL}`
         )
       }
       config = newConfig
       return newConfig
     } else {
-      throw new ValidationError(
+      throw new Error(
         `The server at ${dojoURL} does not appear to be a Dojo!`
       )
     }

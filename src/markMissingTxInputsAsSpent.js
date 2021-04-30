@@ -1,6 +1,6 @@
 const bsv = require('bsv')
 const createSignedRequest = require('./utils/createSignedRequest')
-const boomerang = require('@cwi/boomerang')
+const boomerang = require('boomerang-http')
 
 module.exports = async ({ xprivKey, config, hex, reference }) => {
   const tx = new bsv.Transaction(hex)

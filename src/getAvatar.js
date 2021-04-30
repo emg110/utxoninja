@@ -1,7 +1,7 @@
 const { CONFIG } = require('./defaults')
 const getDojoConfig = require('./utils/getDojoConfig')
 const getPaymail = require('./getPaymail')
-const boomerang = require('@cwi/boomerang')
+const boomerang = require('boomerang-http')
 
 module.exports = async ({ xprivKey, config = CONFIG } = {}) => {
   const serverConfig = await getDojoConfig(config.dojoURL)

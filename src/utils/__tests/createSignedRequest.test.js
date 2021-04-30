@@ -1,10 +1,9 @@
 const createSignedRequest = require('../createSignedRequest')
-const boomerang = require('@cwi/boomerang')
+const boomerang = require('boomerang-http')
 const bsv = require('bsv')
 const getDojoConfig = require('../getDojoConfig')
-const { ValidationError } = require('@cwi/errors')
 
-jest.mock('@cwi/boomerang')
+jest.mock('boomerang-http')
 jest.mock('../getDojoConfig')
 
 describe('createSignedRequest', () => {
@@ -83,7 +82,7 @@ describe('createSignedRequest', () => {
         foo: 'bar'
       },
       feature: 'featureThree'
-    })).rejects.toThrow(new ValidationError(
+    })).rejects.toThrow(new Error(
       'The featureThree feature is not configured on this Dojo!'
     ))
   })

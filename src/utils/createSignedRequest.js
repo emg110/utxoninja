@@ -1,7 +1,6 @@
-const boomerang = require('@cwi/boomerang')
+const boomerang = require('boomerang-http')
 const bsv = require('bsv')
 const getDojoConfig = require('./getDojoConfig')
-const { ValidationError } = require('@cwi/errors')
 
 module.exports = async ({ xprivKey, config, feature, body }) => {
   const serverConfig = await getDojoConfig(config.dojoURL)
@@ -10,7 +9,7 @@ module.exports = async ({ xprivKey, config, feature, body }) => {
   const xpub = hdPriv.hdPublicKey.toString()
   const dt = parseInt(Date.now() / 1000)
   if (typeof serverConfig.capabilities.dojo[feature] !== 'string') {
-    throw new ValidationError(
+    throw new Error(
       `The ${feature} feature is not configured on this Dojo!`
     )
   }
