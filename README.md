@@ -192,6 +192,20 @@ Returns an array of transactions, as defined by the corresponding Dojo API endpo
 
 The return value is a Promise for an array of transaction objects.
 
+### `getTotalOfAmounts({ xprivKey, config, direction, involving, label, startTime, endTime })`
+
+Returns the total of the amounts of the specified transactions.
+
+#### Parameters
+
+- **xprivKey**: Your root xpriv key string
+- **config**: The config object. See the config section for details
+- **direction, label, involving, startTime, endTime**: See the [Dojo API docs](https://dojo.babbage.systems)
+
+#### Return Value
+
+The return value is a Promise for an object, for example: `{ total: 27715 }`
+
 ### `getTotalValue({ xprivKey, config })`
 
 Returns the total of all unspent outputs managed by the Dojo.

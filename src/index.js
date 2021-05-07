@@ -6,6 +6,7 @@ module.exports = {
   getAvatar: require('./getAvatar'),
   setAvatar: require('./setAvatar'),
   getTransactions: require('./getTransactions'),
+  getTotalOfAmounts: require('./getTotalOfAmounts'),
   getTotalValue: require('./getTotalValue'),
   getTransactionWithOutputs: require('./getTransactionWithOutputs'),
   createOutgoingTransaction: require('./createOutgoingTransaction'),
