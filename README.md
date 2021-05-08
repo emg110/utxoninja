@@ -52,6 +52,7 @@ The return value is a Promise for an object with two fields:
 
 - **hex**: The transaction hex string
 - **reference**: The reference that you need to provide to processOutgoingTransaction after it has been accepted by the recipient and broadcasted
+- **amount**: The amount of the transaction (selected inputs minus change outputs)
 
 ### `processOutgoingTransaction({ xprivKey, config, submittedTransaction, reference, recipient, note })`
 

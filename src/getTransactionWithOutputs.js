@@ -87,9 +87,15 @@ module.exports = async ({
     }
   }
 
+  // amount is the sum of selected inputs minus change outputs
+  const amount = selectedInputs.reduce((a, e) => a + e.amount, 0) -
+    changeOutputs.reduce((a, e) => a + e.satoshis, 0)
+
   // Return serialized hex and reference
   return {
     hex: tx.uncheckedSerialize(),
-    reference
+    reference,
+    amount
+    // TODO: inputProofs
   }
 }
