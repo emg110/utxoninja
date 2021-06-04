@@ -1,6 +1,6 @@
 {
   "name": "utxoninja",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Management for P2PKH and P2RPH UTXOs",
   "main": "src/index.js",
   "repository": "git+https://github.com/p2ppsr/utxoninja",
@@ -16,10 +16,8 @@
     "standard": "^15.0.1"
   },
   "dependencies": {
-    "@moneybutton/paymail-client": "^0.38.4",
     "boomerang-http": "^0.1.0",
     "bsv": "^1.5.4",
-    "isomorphic-fetch": "^3.0.0",
     "rpuzzle": "0.0.4"
   }
 }
